@@ -1,7 +1,9 @@
 package com.example.nadav.nutryapp;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,11 +13,14 @@ import android.widget.Toast;
 
 import com.example.nadav.nutryapp.Helpers.SPHelper;
 
+import static android.content.Intent.ACTION_TIME_TICK;
+
 public class MainActivity extends OptionsMenuActivity {
 
   private Toolbar mtoolbar;
   private TextView userPrompt, welcomeBack;
   final private int LOGIN_CODE = 0;
+  BroadcastReceiver br = new BroadcastClockReceiver();
 
   /*  the currently logged in user */
 
@@ -23,6 +28,9 @@ public class MainActivity extends OptionsMenuActivity {
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    IntentFilter clockTickIntent = new IntentFilter(ACTION_TIME_TICK);
+    registerReceiver(br, clockTickIntent);
 
     mtoolbar = findViewById(R.id.toolbar);  // get toolbar layout
     setSupportActionBar(mtoolbar);
