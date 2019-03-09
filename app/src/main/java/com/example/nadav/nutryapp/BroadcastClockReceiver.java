@@ -24,23 +24,17 @@ public class BroadcastClockReceiver extends BroadcastReceiver {
 
         gContext = context;
         sph = new SPHelper(context);
-        //User current_user = null;
-       /*
-        for(User user : users) {
-            if(user.getUserName().equals(sph.getActiveUser())) {
-                current_user = user;
-                break;
-            }
-        }
-*/
-        //Toast.makeText(context, "user age:"+current_user.getUserAge(), Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(context, "received", Toast.LENGTH_SHORT).show();
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-        if(sdf.format(cal.getTime()).equals("22:38"))
-           showNotification();
-
-        if(sdf.format(cal.getTime()).equals(sph.getUserReminder()))
+        if(sdf.format(cal.getTime()).equals(sph.getUserReminder())) {
             Toast.makeText(context, "time for workout!", Toast.LENGTH_LONG).show();
+            showNotification();
+        }
+
+        //if(sdf.format(cal.getTime()).equals(sph.getUserReminder()))
+            //Toast.makeText(context, "time for workout!", Toast.LENGTH_LONG).show();
     }
 
     public void showNotification() {

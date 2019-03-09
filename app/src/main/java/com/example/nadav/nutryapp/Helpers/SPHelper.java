@@ -190,18 +190,24 @@ public class SPHelper {
         setNewUsersInfoTable(allInfo);
     }
 
-    public boolean setUserReminder(String reminder_time) {
+    public void setUserReminder(String reminder_time) {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this.context);
         ArrayList<String> reminderArray = SP_GET(REMINDER_TABLE);
+        int i;
 
-        for (int i = 0; i < reminderArray.size() - 1; i += 2) {
+        for (i = 0; i < reminderArray.size() - 1; i += 2) {
             if(reminderArray.get(i).equals(getActiveUser())) {
                 reminderArray.set(i+1, reminder_time);
-                return true;
+                SP_PUT(REMINDER_TABLE, reminderArray);
+                return;
             }
         }
-        return false;
+        // user have no reminder
+        reminderArray.add(i, getActiveUser());
+        reminderArray.add(i+1, reminder_time);
+        SP_PUT(REMINDER_TABLE, reminderArray);
+
     }
 
     public void setNewUsersInfoTable (ArrayList<User> usersInfo) {
