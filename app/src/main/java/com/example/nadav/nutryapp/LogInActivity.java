@@ -13,6 +13,8 @@ import com.example.nadav.nutryapp.Models.User;
 
 import java.util.ArrayList;
 
+import static java.lang.System.exit;
+
 public class LogInActivity extends AppCompatActivity implements RegisterDialog.RegisterHandler {
 
     /*  ACTIVITY VIEWS   */
@@ -35,6 +37,11 @@ public class LogInActivity extends AppCompatActivity implements RegisterDialog.R
         et_userName = findViewById(R.id.et_userName);
         et_password = findViewById(R.id.et_password);                          // initialize views
 
+    }
+
+    public void exitClicked(View view) {
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 
     /*  initialize private reference 'loggedInUser'   */

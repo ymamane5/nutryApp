@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="163dp"
         android:text="Alert Time"
         android:textSize="24sp"
@@ -25,17 +25,17 @@
 
     <EditText
         android:id="@+id/alert_time_id"
-        android:layout_width="196dp"
+        android:layout_width="102dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="143dp"
         android:layout_marginTop="151dp"
         android:ems="10"
+        android:hint="hh:mm"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="208dp"
-        tools:text="format hh:mm" />
+        tools:layout_editor_absoluteX="208dp" />
 
     <Button
         android:id="@+id/button_save_id"
@@ -43,17 +43,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="159dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="284dp"
         android:onClick="saveButtonPressed"
         android:text="Save"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="411dp"
+        android:text="- to disable the alert write 0 in the field" />
+
+    <Button
+        android:id="@+id/pick_button_id"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="257dp"
+        android:layout_marginTop="156dp"
+        android:text="pick time" />
 </RelativeLayout>

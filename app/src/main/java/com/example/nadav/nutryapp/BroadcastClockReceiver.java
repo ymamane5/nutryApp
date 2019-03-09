@@ -8,10 +8,8 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
 
 import com.example.nadav.nutryapp.Helpers.SPHelper;
-import com.example.nadav.nutryapp.Models.User;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class BroadcastClockReceiver extends BroadcastReceiver {
@@ -25,7 +23,6 @@ public class BroadcastClockReceiver extends BroadcastReceiver {
         gContext = context;
         sph = new SPHelper(context);
 
-        Toast.makeText(context, "received", Toast.LENGTH_SHORT).show();
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         if(sdf.format(cal.getTime()).equals(sph.getUserReminder())) {
@@ -33,8 +30,6 @@ public class BroadcastClockReceiver extends BroadcastReceiver {
             showNotification();
         }
 
-        //if(sdf.format(cal.getTime()).equals(sph.getUserReminder()))
-            //Toast.makeText(context, "time for workout!", Toast.LENGTH_LONG).show();
     }
 
     public void showNotification() {

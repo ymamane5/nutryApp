@@ -12,6 +12,8 @@ import com.example.nadav.nutryapp.Models.User;
 
 import java.util.ArrayList;
 
+import static java.lang.System.exit;
+
 public class OptionsMenuActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,8 @@ public class OptionsMenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        MainActivity main = new MainActivity();
 
         switch (item.getItemId()) {
             case R.id.action_add:
@@ -65,6 +69,10 @@ public class OptionsMenuActivity extends AppCompatActivity {
             case R.id.action_logout:
                 Intent logOut = new Intent(this,MainActivity.class);
                 startActivity(logOut);
+                return true;
+            case R.id.action_exit:
+                //exit(0);
+                main.onExitPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

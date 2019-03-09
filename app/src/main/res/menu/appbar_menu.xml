@@ -39,5 +39,8 @@
                 app:showAsAction="never" />
         </menu>
     </item>
+    <item
+        android:id="@+id/action_exit"
+        android:title="Exit" />
 
 </menu>

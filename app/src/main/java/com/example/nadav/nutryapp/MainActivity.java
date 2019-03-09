@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.nadav.nutryapp.Helpers.SPHelper;
 
 import static android.content.Intent.ACTION_TIME_TICK;
+import static java.lang.System.exit;
 
 public class MainActivity extends OptionsMenuActivity {
 
@@ -41,8 +42,6 @@ public class MainActivity extends OptionsMenuActivity {
     Intent logIn = new Intent(this,LogInActivity.class);
     startActivityForResult(logIn,LOGIN_CODE);
 
-
-
   }
 
   @Override
@@ -68,4 +67,8 @@ public class MainActivity extends OptionsMenuActivity {
   @Override
   public void onBackPressed() {}
 
+  public void onExitPressed() {
+    android.os.Process.killProcess(android.os.Process.myPid());
+    System.exit(0);
+  }
 }
