@@ -30,6 +30,9 @@
                 android:title="Edit personal information"
                 app:showAsAction="never" />
             <item
+                android:id="@+id/action_set_reminder"
+                android:title="Set Reminder" />
+            <item
                 android:id="@+id/action_logout"
                 android:icon="@drawable/ic_logout"
                 android:title="Logout"

@@ -58,6 +58,10 @@ public class OptionsMenuActivity extends AppCompatActivity {
                 Intent viewEditInfo = new Intent(this,EditInfoActivity.class);
                 startActivity(viewEditInfo);
                 return true;
+            case R.id.action_set_reminder:
+                Intent viewSetReminder = new Intent(this,SetReminder.class);
+                startActivity(viewSetReminder);
+                return true;
             case R.id.action_logout:
                 Intent logOut = new Intent(this,MainActivity.class);
                 startActivity(logOut);

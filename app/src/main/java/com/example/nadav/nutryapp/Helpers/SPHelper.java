@@ -23,6 +23,7 @@ public class SPHelper {
     public static final String RECORDS_TABLE = "records";
     public static final String INFO_TABLE = "userInfo";
     public static final String ACTIVE_USER = "activeUser";
+    public static final String REMINDER_TABLE = "reminder";
 
 
     /**
@@ -72,6 +73,22 @@ public class SPHelper {
     /*  ----------------------------- */
     /*   USERS SP FORMAT: <user-name, user-password>                  */
     /*  ----------------------------- */
+
+    public String getUserReminder() {
+
+        ArrayList<String> remindersArray = SP_GET(REMINDER_TABLE);
+        String current_user = getActiveUser();
+        String time = "0";
+
+        for(int i = 0; i < remindersArray.size() - 1; i += 2) {
+            if(remindersArray.get(i).equals(current_user)) {
+                time = remindersArray.get(i+1);
+                break;
+            }
+        }
+        return time;
+
+    }
 
     /*  get User objects of all Users in an ArrayList   */
     public ArrayList<User> getUsers() {
@@ -171,6 +188,20 @@ public class SPHelper {
         }
 
         setNewUsersInfoTable(allInfo);
+    }
+
+    public boolean setUserReminder(String reminder_time) {
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this.context);
+        ArrayList<String> reminderArray = SP_GET(REMINDER_TABLE);
+
+        for (int i = 0; i < reminderArray.size() - 1; i += 2) {
+            if(reminderArray.get(i).equals(getActiveUser())) {
+                reminderArray.set(i+1, reminder_time);
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setNewUsersInfoTable (ArrayList<User> usersInfo) {
