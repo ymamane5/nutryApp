@@ -1,6 +1,7 @@
 package com.example.nadav.nutryapp;
 
 import android.app.Activity;
+import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -22,6 +23,7 @@ public class MainActivity extends OptionsMenuActivity {
   private TextView userPrompt, welcomeBack;
   final private int LOGIN_CODE = 0;
   BroadcastReceiver br = new BroadcastClockReceiver();
+  //Service NutryService = new NutryAppService();
 
   /*  the currently logged in user */
 
@@ -38,6 +40,11 @@ public class MainActivity extends OptionsMenuActivity {
 
     userPrompt = findViewById(R.id.userPrompt);
     welcomeBack = findViewById(R.id.welcomeBack);
+
+    Intent i= new Intent(this, NutryAppService.class);
+// potentially add data to the intent
+    //i.putExtra("KEY1", "Value for service");
+    startService(i);
 
     Intent logIn = new Intent(this,LogInActivity.class);
     startActivityForResult(logIn,LOGIN_CODE);

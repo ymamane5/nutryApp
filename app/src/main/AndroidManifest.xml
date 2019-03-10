@@ -22,6 +22,9 @@
         <activity android:name=".HistoryActivity" />
         <activity android:name=".StatisticsActivity" />
         <activity android:name=".SetReminder"/>
+        <service android:name=".NutryAppService">
+
+        </service>
     </application>
 
 </manifest>
