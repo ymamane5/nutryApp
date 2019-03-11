@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.nadav.nutryapp.Helpers.SPHelper;
@@ -20,8 +22,25 @@ public class OptionsMenuActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.appbar_menu, menu);
+
+        Switch mySwitch = findViewById(R.id.switch_id);
+        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+
+                if(isChecked)
+                    startService(new Intent(getBaseContext(), NutryAppService.class));
+
+                else
+                    stopService(new Intent(getBaseContext(), NutryAppService.class));
+
+            }
+        });
+
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -3,7 +3,9 @@ package com.example.nadav.nutryapp;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
@@ -11,6 +13,8 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 public class NutryAppService extends Service {
+
+    private  MediaPlayer player;
 
      @Override
     public void onCreate() {
@@ -21,11 +25,20 @@ public class NutryAppService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-         showNotification(intent.getStringExtra("KEY1"));
-        Log.v("reminder_tag", "inside service onStartCommand");
-        
-        //return super.onStartCommand(intent, flags, startId);
+        // showNotification(intent.getStringExtra("KEY1"));
+        //Log.v("reminder_tag", "inside service onStartCommand");
+
+        player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
+        player.setLooping(true);
+        player.start();
+
         return Service.START_NOT_STICKY;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        player.stop();
     }
 
     @Nullable

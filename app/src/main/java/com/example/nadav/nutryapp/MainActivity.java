@@ -5,6 +5,8 @@ import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.MediaPlayer;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -40,11 +42,6 @@ public class MainActivity extends OptionsMenuActivity {
 
     userPrompt = findViewById(R.id.userPrompt);
     welcomeBack = findViewById(R.id.welcomeBack);
-
-    Intent i= new Intent(this, NutryAppService.class);
-// potentially add data to the intent
-    //i.putExtra("KEY1", "Value for service");
-    startService(i);
 
     Intent logIn = new Intent(this,LogInActivity.class);
     startActivityForResult(logIn,LOGIN_CODE);
