@@ -11,8 +11,12 @@ import androidx.annotation.Nullable;
 
 public class NutryAppService extends Service {
 
-    Context gContext;
-
+     @Override
+    public void onCreate() {
+        Log.v("reminder_tag", "inside service onCreate");
+        super.onCreate();
+    }
+    
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
@@ -29,16 +33,16 @@ public class NutryAppService extends Service {
         return null;
     }
 
-    public void showNotification(String str) {
+     public void showNotification(String str) {
         String notificationTag = "notificationTag2";
         int notificationId = 234;
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(gContext, "1")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getBaseContext(), "1")
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("NutrApp notification")
                 .setContentText("str")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        NotificationManagerCompat.from(gContext).notify(notificationTag, notificationId, builder.build());
+        NotificationManagerCompat.from(getBaseContext()).notify(notificationTag, notificationId, builder.build());
     }
 
 }
