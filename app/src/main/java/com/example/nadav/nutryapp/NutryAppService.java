@@ -20,9 +20,9 @@ public class NutryAppService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        //create notification
-       // showNotification(intent.getStringExtra("KEY1"));
-        showNotification("no key");
+         showNotification(intent.getStringExtra("KEY1"));
+        Log.v("reminder_tag", "inside service onStartCommand");
+        
         //return super.onStartCommand(intent, flags, startId);
         return Service.START_NOT_STICKY;
     }
