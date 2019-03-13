@@ -65,7 +65,6 @@ public class AddRecordActivity extends OptionsMenuActivity implements PickDateDi
         NutritionRecord nr = new NutritionRecord(sph.getActiveUser(),desc,cal);
         nr.setDate(year,month,day);
         sph.addNutritionRecord(nr);
-
         Toast.makeText(this,"saved for " + date,Toast.LENGTH_LONG).show();
         et_description.setText("");
         et_calories.setText("");

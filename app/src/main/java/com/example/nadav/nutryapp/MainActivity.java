@@ -71,8 +71,4 @@ public class MainActivity extends OptionsMenuActivity {
   @Override
   public void onBackPressed() {}
 
-  public void onExitPressed() {
-    android.os.Process.killProcess(android.os.Process.myPid());
-    System.exit(0);
-  }
 }

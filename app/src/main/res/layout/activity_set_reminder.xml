@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <include
         layout="@layout/toolbar_layout"
@@ -12,6 +12,9 @@
         tools:layout_editor_absoluteY="230dp" />
 
     <TextView
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -24,6 +27,7 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <EditText
+
         android:id="@+id/alert_time_id"
         android:layout_width="102dp"
         android:layout_height="wrap_content"
@@ -38,6 +42,9 @@
         tools:layout_editor_absoluteX="208dp" />
 
     <Button
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:id="@+id/button_save_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,9 +54,12 @@
         android:layout_marginTop="284dp"
         android:onClick="saveButtonPressed"
         android:text="Save"
-        android:textAlignment="center" />
+        android:textAlignment="center"/>
 
     <TextView
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,9 +67,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="37dp"
         android:layout_marginTop="411dp"
-        android:text="- to disable the alert write 0 in the field" />
+        android:text="- to disable the alert, write 0 in the field" />
 
     <Button
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:id="@+id/pick_button_id"
         android:layout_width="106dp"
         android:layout_height="wrap_content"

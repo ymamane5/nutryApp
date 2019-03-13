@@ -140,7 +140,6 @@ public class StatisticsActivity extends OptionsMenuActivity implements PickDateD
         nr.setDate(year, month, day);
         this.dateForActivity = nr.getDate();
 
-
         makeCaloriesBar();
         makeBmrBar();
 
@@ -152,7 +151,7 @@ public class StatisticsActivity extends OptionsMenuActivity implements PickDateD
         labels[1]="bmr";
         xAxis.setValueFormatter(new AxisValueFormatter(labels));
 
-        BarDataSet barDataSet = new BarDataSet(barEntries,"bar-data-set label");
+        BarDataSet barDataSet = new BarDataSet(barEntries,"calorie consumption");
         BarData barData = new BarData(barDataSet);
         barChart.setData(barData);
         barChart.invalidate();

@@ -39,11 +39,6 @@ public class LogInActivity extends AppCompatActivity implements RegisterDialog.R
 
     }
 
-    public void exitClicked(View view) {
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(0);
-    }
-
     /*  initialize private reference 'loggedInUser'   */
     public void loginClicked(View view) {
 

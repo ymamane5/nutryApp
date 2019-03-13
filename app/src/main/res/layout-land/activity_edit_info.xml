@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".EditInfoActivity">
 
     <include
+        android:id="@+id/include"
         layout="@layout/toolbar_layout"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="230dp" />
@@ -16,7 +16,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="148dp"
         android:fontFamily="casual"
         android:text="age:"
         android:textColor="@android:color/holo_red_dark"
@@ -25,14 +25,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.132" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="112dp"
         android:fontFamily="casual"
         android:text="weight:"
         android:textColor="@android:color/holo_red_dark"
@@ -45,7 +45,7 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="casual"
@@ -59,17 +59,17 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:id="@+id/editInfo_etAge"
         android:layout_width="78dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:fontFamily="casual"
         android:hint="age"
         android:inputType="number"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -80,7 +80,7 @@
         android:layout_width="81dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -90,11 +90,14 @@
         android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        android:fontFamily="casual"
         android:id="@+id/editInfo_etHeight"
         android:layout_width="83dp"
         android:layout_height="wrap_content"
@@ -102,12 +105,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:fontFamily="casual"
         android:hint="height"
         android:inputType="number"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toEndOf="@+id/textView10"
@@ -127,22 +127,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.599"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editInfo_readioGroup"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <RadioGroup
 
         android:id="@+id/editInfo_readioGroup"
-        android:layout_width="83dp"
+        android:layout_width="85dp"
         android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editInfo_etAge">
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toEndOf="@+id/editInfo_etHeight"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.414">
 
         <RadioButton
             android:id="@+id/editInfo_rbMale"

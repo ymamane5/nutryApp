@@ -1,6 +1,8 @@
 package com.example.nadav.nutryapp;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,20 +29,14 @@ public class OptionsMenuActivity extends AppCompatActivity {
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-
                 if(isChecked)
                     startService(new Intent(getBaseContext(), NutryAppService.class));
-
                 else
                     stopService(new Intent(getBaseContext(), NutryAppService.class));
-
             }
         });
-
         return true;
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -89,15 +85,13 @@ public class OptionsMenuActivity extends AppCompatActivity {
                 Intent logOut = new Intent(this,MainActivity.class);
                 startActivity(logOut);
                 return true;
-            case R.id.action_exit:
-                //exit(0);
-                main.onExitPressed();
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
+
+    @Override
+    public void onBackPressed() {}
 
     private void displayMessage (String msg) { Toast.makeText(this,msg,Toast.LENGTH_SHORT).show(); }
 

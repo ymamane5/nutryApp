@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
@@ -31,7 +32,7 @@
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_set_reminder"
-                android:title="Set Reminder" />
+                android:title="Set workout reminder" />
             <item
                 android:id="@+id/action_logout"
                 android:icon="@drawable/ic_logout"
@@ -39,8 +40,5 @@
                 app:showAsAction="never" />
         </menu>
     </item>
-    <item
-        android:id="@+id/action_exit"
-        android:title="Exit" />
 
 </menu>
